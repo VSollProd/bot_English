@@ -1,0 +1,100 @@
+Art – мистецтво
+Artist – художник
+Painter – художник-живописець
+Sculptor – скульптор
+Photographer – фотограф
+Graphic Designer – графічний дизайнер 
+Illustrator – ілюстратор
+Printmaker – друкар
+Artwork – твір мистецтва
+Medium – техніка, матеріал
+Canvas – полотно
+Paint – фарба
+Watercolor – акварель
+Oil paint – олійна фарба
+Acrylic paint – акрилова фарба
+Pastel – пастель
+Chalk – мел
+Charcoal – вугілля
+Ink – чорнило
+Pencil – олівець
+Sketch – набросок
+Drawing – малюнок
+Illustration – ілюстрація
+Print – друкований матеріал
+Engraving – гравюра
+Etching – етюд
+Lithograph – літографія
+Woodcut – дереворит
+Sculpture – скульптура
+Statue – статуя
+Bust – бюст
+Carving – різьблення
+Installation – інсталяція
+Performance – виступ
+Theatre – театр
+Play – п'єса
+Script – сценарій
+Screenplay – сценарій для фільму
+Actor – актор
+Actress – актриса
+Director – режисер
+Producer – продюсер
+Stage – сцена
+Set – декорації
+Costume – костюм
+Make-up – макіяж
+Music – музика
+Composer – композитор
+Musician – музикант
+Singer – співак/співачка
+Band – гурт
+Orchestra – оркестр
+Conductor – диригент
+Concert – концерт
+Album – альбом
+Song – пісня
+Dance – танець
+Choreographer – хореограф
+Ballet – балет
+Modern dance – сучасний танець
+Performance art – performance art
+Street art – стріт-арт
+Graffiti – графіті
+Calligraphy – каліграфія
+Typography – типографіка
+Design – дизайн
+Industrial design – промисловий дизайн
+Fashion design – дизайнерський одяг
+Interior design – дизайн інтер'єру
+Architecture – архітектура
+Building – будівля
+Skyscraper – хмарочос
+Facade – фасад
+Blueprint – креслення
+Plan – план
+Section – секція
+Elevation – елевація
+Floor plan – план поверху
+Model – модель
+Draft – ескіз
+Rendering – візуалізація
+Computer-aided design (CAD) – комп'ютерний дизайн
+3D printing – 3D-друк
+Installation art – інсталяційне мистецтво
+Public art – мистецтво в громадських місцях
+Performance art – виступне мистецтво
+Conceptual art – концептуальне мистецтво
+Pop art – поп-арт
+Abstract art – абстрактне мистецтво
+Expressionism – експресіонізм
+Impressionism – імпресіонізм
+Realism – реалізм
+Surrealism – сюрреалізм
+Cubism – кубізм
+Fauvism – фовізм
+Dadaism – дадаїзм
+Art Nouveau – арт-нуво
+Renaissance – Ренесанс
+Baroque – бароко
+Landmark – пам'ятка 

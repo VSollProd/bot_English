@@ -1,0 +1,79 @@
+software - програмне забезпечення
+hardware - апаратне забезпечення
+computer - комп'ютер
+laptop - ноутбук
+server - сервер
+network - мережа
+database - база даних
+programming - програмування
+coding - написання коду
+debugging - відлагодження програми
+algorithm - алгоритм
+artificial intelligence - штучний інтелект
+virtual reality - віртуальна реальність
+cybersecurity - кібербезпека
+web development - розробка веб-сайтів
+mobile app development - розробка мобільних додатків
+user interface - інтерфейс користувача
+user experience - досвід користувача
+cloud computing - хмарні обчислення
+internet of things - інтернет речей.
+operating system - операційна система
+browser - браузер
+search engine - пошукова система
+website - веб-сайт
+web page - веб-сторінка
+domain name - доменне ім'я
+web hosting - хостинг
+bandwidth - пропускна здатність
+download - завантаження
+upload - вивантаження
+firewall - брандмауер
+encryption - шифрування
+decryption - дешифрування
+cache - кеш
+cookie - куки
+hyperlink - гіперпосилання
+HTML - гіпертекстова мова розмітки
+CSS - каскадні таблиці стилів
+JavaScript - мова програмування JavaScript
+Python - мова програмування Python
+Java - мова програмування Java
+C++ - мова програмування C++
+C# - мова програмування C#
+PHP - мова програмування PHP
+SQL - мова структурованих запитів
+API - інтерфейс програмування застосунків
+SDK - комплект розробника програмного забезпечення
+IDE - інтегроване середовище розробки
+version control - система контролю версій
+Git - система контролю версій Git
+Agile - методологія Agile
+Scrum - методологія Scrum
+waterfall - методологія Waterfall
+DevOps - методологія DevOps
+continuous integration - постійна інтеграція
+continuous delivery - постійна доставка
+continuous deployment - постійне розгортання
+testing - тестування
+unit testing - модульне тестування
+integration testing - інтеграційне тестування
+user acceptance testing - тестування прийняття користувачем
+load testing - тестування навантаженням
+performance testing - тестування продуктивності
+debugging - відлагодження
+bug - помилка
+feature - функціональність
+sprint - ітерація
+backlog - список завдань
+MVP - мінімально життєздатний продукт
+prototype - прототип
+wireframe - каркас макету
+mockup - макет
+UI design - дизайн інтерфейсу користувача
+UX design - дизайн досвіду користувача
+graphic design - графічний дизайн
+animation - анімація
+video editing - відеомонтаж
+audio editing - аудіомонтаж
+virtual assistant - віртуальний асистент

@@ -1,0 +1,93 @@
+Surgeon — хирург
+Anesthesiologist — анестезиолог
+Cardiologist — кардиолог
+Traumatologist — травматолог
+Orthopedist — ортопед
+Gastroenterologist — гастроэнтеролог
+Dermatologist — дерматолог
+Gynaecologist — гинеколог
+Urologist — уролог
+Ophthalmologist — врач-офтальмолог
+Therapist — терапевт
+Nurse — медсестра
+Paediatrician — педиатр
+Physician — врач
+Doctor — врач
+Family doctor — семейный врач
+Hospital — больница
+Operating theatre — операционная
+Oxygen mask — кислородная маска
+Painkilling — болеутоляющий
+Personal protective equipment — средства индивидуальной защиты
+Pill — таблетка
+Prescribe — прописывать
+Prescription — рецепт
+Burn — ожог
+Broken bone (fracture) — сломанная кость (перелом)
+Illness — заболевание
+Sickness — болезнь
+Cold — простуда
+Flu — грипп
+Virus — вирус
+Chronic — хронический
+Benign — доброкачественный
+Terminal — терминальная стадия
+Cure — вылечить
+Side effect — побочный эффект
+Sleeping pill — снотворное
+Soothe — слинг
+Sticking plaster — лейкопластырь
+Thermometer — термометр
+Traditional medicine — традиционная медицина
+Transplant — пересадка
+X-ray — рентген
+Emergency Room (ER) — Пункт неотложной помощи
+Consult — проконсультироваться
+Critical care — реанимация
+Crutch — костыль
+Cure — вылечить
+Diagnose — диагностировать
+Dose — доза
+Emergency room — комната неотложной помощи
+Examination — обследование
+First aid — первая помощь
+Hospitalization — госпитализация
+Implant — имплант
+Informed consent — ​​информационное соглашение
+Injection — инъекция
+Intensive care — интенсивная терапия
+Junior doctor — младший врач
+Life support machine — аппарат жизнеобеспечения
+Medicine man — знахарь
+Monitor — монитор
+Operate — оперировать
+Operating table — операционный стол
+Intensive Care Unit (ICU) — Отделение интенсивной терапии
+Ache — боль
+Acute — острый, пронзительный
+Ambulance — скорая помощь
+Amputation — ампутация
+Alternative medicine — альтернативная медицина
+Attendant — обслуживающий персонал
+Appointment — ​​назначение, например, следующей записи
+Biopsy — биопсия
+Bed rest — постельный режим
+Blood type (group) — группа крови
+Brace — скоба
+Capsule — капсула
+Casualty — раненый
+Clinical trial — клиническое исследование
+Community hospital — общественная больница
+Operating Room (OR) — операционная
+Ward — палата
+Morgue, mortuary, dead house — морг
+Midwife — акушерка
+Obstetrician — акушер
+Neurologist — невролог
+Pharmacist — фармацевт
+Physician — аптека
+Physician’s assistant — помощник врача
+Physiotherapist — физиотерапевт
+Dentistry — дантист
+Plastic surgeon — пластический хирург
+Dental surgeon — хирург-стоматолог
