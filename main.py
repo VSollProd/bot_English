@@ -6,7 +6,7 @@ import parseLevel
 import parseAct
 import datetime
 
-# Константы
+
 BOT_TOKEN = '5813656566:AAFXayBd7gVLvn5cAQgvJpUlwbg11r82HPg'
 import time
 
@@ -22,15 +22,15 @@ parserLvl = parseLevel.WordsParser()
 now = datetime.datetime.now()
 
 tim = f'{now.hour}:{now.minute}'
-# Инициализация бота
+
 bot = Bot(BOT_TOKEN)
 dp = Dispatcher(bot)
-# Инициализация кнопок
+
 CHANGE_KEYBOARD = ReplyKeyboardMarkup(resize_keyboard=True).add(
     KeyboardButton("/Змінити рівень або сферу діяльності")
 )
 
-# Инициализация кнопок
+
 LEVEL_KEYBOARD = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(
     KeyboardButton('/level A1'),
     KeyboardButton('/level A2'),
@@ -54,12 +54,10 @@ MAIN_KEYBOARD = ReplyKeyboardMarkup(resize_keyboard=True).add(
 
 
 
-# Функции-обработчики
+
 @dp.message_handler(commands='start')
 async def start_handler(message: types.Message):
-    """
-    Обработчик команды /start.
-    """
+
     await bot.send_message(message.from_user.id,
                            "Привіт, це бот для вивчення аглійських слів, тут можно обрати свою сферу або свій рівень англійскої мови(А1,В2.....). Обери нижче! \n Після того як оберете тип слів що вам треба вивчати вам буде приходити 5 слів кожний день о 12:00 день.",
                            reply_markup=MAIN_KEYBOARD)
@@ -67,17 +65,13 @@ async def start_handler(message: types.Message):
 
 @dp.message_handler(commands='0брати')
 async def choose_level_handler(message: types.Message):
-    """
-    Обработчик команды /0брати за рівнем.
-    """
+
     await bot.send_message(message.from_user.id, "Оберіть рівень.", reply_markup=LEVEL_KEYBOARD)
 
 
 @dp.message_handler(commands='Обрати')
 async def choose_activity_handler(message: types.Message):
-    """
-    Обработчик команды /Обрати за сферою діяльності.
-    """
+
     await bot.send_message(message.from_user.id, "Оберіть свою сферу", reply_markup=ACTIVITY_KEYBOARD)
 
 
@@ -86,7 +80,7 @@ async def level_handler(message: types.Message):
     level = message.text.split(' ')[1]  # Получаем уровень из текста сообщения
     await bot.send_message(message.from_user.id, f"Ви обрали рівень {level}, тепер вам буде приходить кожен день по 5 слів рівня{level}", reply_markup=CHANGE_KEYBOARD)
 
-    # здесь можно добавить логику для работы с выбранным уровнем
+    
     if level == 'A1':
         await a1(message)
     elif level == 'A2':
@@ -104,7 +98,7 @@ async def act_handler(message: types.Message):
     act = message.text.split(' ')[1]  # Получаем сферу из текста сообщения
     global counter_act
     await bot.send_message(message.from_user.id, f"Ви обрали сферу {act}, тепер вам буде приходить кожен день по 5 слів зі сфери {act}", reply_markup=CHANGE_KEYBOARD)
-    # здесь можно добавить логику для работы с выбранным уровнем
+   
 
     while True:
         now = datetime.datetime.now()
