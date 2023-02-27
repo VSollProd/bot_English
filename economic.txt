@@ -1,0 +1,100 @@
+economy - економіка
+market - ринок
+supply - поставка
+demand - попит
+inflation - інфляція
+deflation - дефляція
+recession - рецесія
+depression - депресія
+GDP - ВВП (валовий внутрішній продукт)
+GNP - ВНП (валовий національний продукт)
+interest rate - процентна ставка
+exchange rate - обмінний курс
+fiscal policy - фіскальна політика
+monetary policy - грошова політика
+budget - бюджет
+deficit - дефіцит
+surplus - надлишок
+tax - податок
+tariff - мито
+subsidy - субсидія
+trade - торгівля
+commerce - комерція
+import - імпорт
+export - експорт
+balance of trade - баланс торгівлі
+balance of payments - баланс платіжного балансу
+protectionism - протекціонізм
+free trade - вільна торгівля
+WTO - ВОТ (Світова організація торгівлі)
+IMF - МВФ (Міжнародний валютний фонд)
+World Bank - Світовий банк
+development - розвиток
+investment - інвестиції
+capital - капітал
+stock market - фондовий ринок
+bond - облігація
+share - акція
+dividend - дивіденд
+merger - злиття
+acquisition - придбання
+takeover - викуп
+conglomerate - конгломерат
+monopoly - монополія
+oligopoly - олігополія
+competition - конкуренція
+market share - частка ринку
+brand - бренд
+advertising - реклама
+marketing - маркетинг
+branding - брендування
+customer - клієнт
+consumer - споживач
+producer - виробник
+supplier - постачальник
+retailer - роздрібний торговець
+wholesaler - оптовий торговець
+e-commerce - електронна комерція
+m-commerce - мобільна комерція
+online shopping - онлайн шопінг
+brick and mortar - традиційна торгівля (з камінними магазинами)
+service - послуга
+customer service - обслуговування клієнтів
+satisfaction - задоволення
+loyalty - лояльність
+customer retention - збереження клієнтів
+pricing - ціноутворення
+cost - витрати
+profit - прибуток
+revenue - дохід
+ROI - повернення інвестицій
+P&L - звіт про прибутки та збитки
+break-even point - точка беззбитковості
+cash flow - готівкові потоки
+financial statement - фінансова звітність
+assets - активи
+liabilities - зобов'язання
+equity - власний капітал
+income statement - звіт про прибутки
+balance sheet - баланс
+audit - аудит
+tax return - податкова декларація
+tax deduction - податкова знижка
+tax credit - податковий кредит
+payroll - заробітна плата
+HR - кадри
+recruitment - рекрутинг
+training - навчання
+development - розвиток
+performance review - оцінка продуктивності
+benefits - додаткові вигоди
+compensation - компенсація
+retirement - пенсія
+pension plan - пенсійний план
+insurance - страхування
+risk - ризик
+diversification - диверсифікація
+portfolio - портфель
+asset allocation - розподіл активів
+hedge fund - хедж-фонд
+mutual fund - інвестиційний фонд

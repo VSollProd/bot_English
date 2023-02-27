@@ -1,0 +1,100 @@
+politics - політика
+government - уряд
+democracy - демократія
+dictatorship - диктатура
+election - вибори
+campaign - кампанія
+voting - голосування
+ballot - голосувальний бюлетень
+polling station - дільниця
+majority - більшість
+minority - меншисть
+referendum - референдум
+constituency - виборчий округ
+parliament - парламент
+legislature - законодавча влада
+Congress - Конгрес
+Senate - Сенат
+House of Representatives - Палата представників
+MP - член парламенту
+constituency - виборчий округ
+constituency office - виборчий офіс
+constituency surgery - зустрічі з виборцями
+representative - представник
+senator - сенатор
+congressperson - конгресмен
+party - партія
+political party - політична партія
+candidate - кандидат
+leader - лідер
+platform - програма
+policy - політика, стратегія
+manifesto - маніфест
+coalition - коаліція
+opposition - опозиція
+government backbencher - депутат-бекбенчер
+whip - голова фракції
+cabinet - кабінет міністрів
+minister - міністр
+portfolio - портфель міністра
+department - департамент
+civil servant - державний службовець
+policy advisor - радник з питань політики
+lobbying - лобіювання
+interest group - інтересна група
+think tank - дослідницький центр
+pressure group - група тиску
+NGO - неприбуткова організація
+international relations - міжнародні відносини
+foreign policy - зовнішня політика
+diplomacy - дипломатія
+ambassador - посол
+consulate - консульство
+embassy - посольство
+treaty - договір
+alliance - союз
+war - війна
+peace - мир
+conflict - конфлікт
+negotiation - переговори
+ceasefire - перемир'я
+ceasefire agreement - угода про перемир'я
+armistice - перемир'я
+treaty - договір
+peace treaty - мирний договір
+diplomatic immunity - дипломатичний імунітет
+international law - міжнародне право
+human rights - права людини
+civil rights - громадянські права
+freedom of speech - свобода слова
+freedom of assembly - свобода зібрань
+freedom of the press - свобода преси
+freedom of religion - свобода віросповідання
+democracy - демократія
+republic - республіка
+monarchy - монархія
+constitution - конституція
+bill of rights - білль про права
+civil disobedience - громадянське непокорення
+protest - протест
+demonstration - демонстрація
+strike - страйк
+boycott - бойкот
+civil war - громадянська війна
+coup - переворот
+impeachment - імпічмент
+corruption - корупція
+bribery - хабарництво
+embezzlement - розкрадання коштів
+nepotism - на користь родичів
+cronyism - на користь друзів
+vote of no confidence - голосування недовіри
+recall - звільнення з посади
+resignation - відставка
+scandal - скандал
+gerrymandering - перекручення виборів
+redistricting - переналагодження виборчих округів
+swing state - коливальний штат
+poll - опитування
+opinion poll - опитування громадської думки
+exit poll - виборче опитування.
