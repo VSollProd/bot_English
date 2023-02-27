@@ -51,7 +51,7 @@ MAIN_KEYBOARD = ReplyKeyboardMarkup(resize_keyboard=True).add(
     KeyboardButton('/0брати за рівнем'),
     KeyboardButton('/Обрати за сферою діяльності')
 )
-print(time)
+
 
 
 # Функции-обработчики
