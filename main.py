@@ -135,7 +135,7 @@ async def sfera(message : types.Message, act):
         now = datetime.datetime.now()
         tim = now.strftime('%H:%M')
 
-        if tim == '10:35':
+        if tim == '12:00':
             if counter1+5 <= len(list):
                 await bot.send_message(message.from_user.id, list[counter1])
                 await bot.send_message(message.from_user.id, list[counter1 + 1])
@@ -157,7 +157,7 @@ async def a1(message: types.Message):
         now = datetime.datetime.now()
         tim = now.strftime('%H:%M')
 
-        if tim == '21:05':
+        if tim == '12:00':
             await bot.send_message(message.from_user.id, list[counter1])
             await bot.send_message(message.from_user.id, list[counter1 + 1])
             await bot.send_message(message.from_user.id, list[counter1 + 2])
