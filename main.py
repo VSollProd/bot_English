@@ -10,7 +10,7 @@ import pytz
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 
-BOT_TOKEN = '5813656566:AAFXayBd7gVLvn5cAQgvJpUlwbg11r82HPg'
+BOT_TOKEN = '6168553378:AAF1rIIsRonI2pWwf4orMX0qh4sBDMvY-Xc'
 import time
 
 counter_act = 0
