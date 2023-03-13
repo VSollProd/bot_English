@@ -89,10 +89,10 @@ async def level_handler(message: types.Message):
 
 
     if level == 'A1':
-        scheduler.add_job(a1, args=(message,), trigger='cron', hour = 18 , minute = 9)
+        scheduler.add_job(a1, args=(message,), trigger='cron', hour = 12 , minute = 0)
 
     elif level == 'A2':
-        scheduler.add_job(a2,args=(message,), trigger='cron', hour = 18 , minute = 11)
+        scheduler.add_job(a2,args=(message,), trigger='cron', hour = 12 , minute = 0)
 
     elif level == 'B1':
         scheduler.add_job(b1,args=(message,), trigger='cron', hour = 12 , minute = 0)
