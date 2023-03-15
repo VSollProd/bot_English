@@ -5,33 +5,48 @@ from aiogram.utils import executor
 import parseLevel
 import parseAct
 import datetime
+import random
 import asyncio
 import pytz
+import sqlite3
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 
 BOT_TOKEN = '6168553378:AAF1rIIsRonI2pWwf4orMX0qh4sBDMvY-Xc'
-import time
 
-counter_act = 0
+conn = sqlite3.connect('users.db')
+cursor = conn.cursor()
+cursor.execute('''CREATE TABLE IF NOT EXISTS users (user_id INTEGER PRIMARY KEY, category TEXT)''')
+
+conn1 = sqlite3.connect('users.db')
+cursor1 = conn.cursor()
+cursor1.execute('''CREATE TABLE IF NOT EXISTS users2 (user_id INTEGER PRIMARY KEY, category TEXT)''')
+
+
+
+
+
 kiev = pytz.timezone('Europe/Kiev')
-counter1 = 0
-counter2 = 0
-counter3 = 0
-counter4 = 0
-counter5 = 0
+
 parserLvl = parseLevel.WordsParser()
 
-count_stop = 0
-now = datetime.datetime.now()
+
+
 
 
 
 bot = Bot(BOT_TOKEN)
 dp = Dispatcher(bot)
 scheduler = AsyncIOScheduler(timezone=kiev)
+scheduler2 = AsyncIOScheduler(timezone=kiev)
+scheduler3 = AsyncIOScheduler(timezone=kiev)
+scheduler4 = AsyncIOScheduler(timezone=kiev)
+scheduler5 = AsyncIOScheduler(timezone=kiev)
+scheduler6 = AsyncIOScheduler(timezone=kiev)
+scheduler7 = AsyncIOScheduler(timezone=kiev)
 
-
+ids= []
+acts = []
 
 CHANGE_KEYBOARD = ReplyKeyboardMarkup(resize_keyboard=True).add(
     KeyboardButton("/Змінити рівень або сферу діяльності")
@@ -86,23 +101,10 @@ async def stop(message: types.Message):
 @dp.message_handler(commands='level')
 async def level_handler(message: types.Message):
     level = message.text.split(' ')[1]  # Получаем уровень из текста сообщения
+    user_id = message.from_user.id
 
-
-    if level == 'A1':
-        scheduler.add_job(a1, args=(message,), trigger='cron', hour = 12 , minute = 0)
-
-    elif level == 'A2':
-        scheduler.add_job(a2,args=(message,), trigger='cron', hour = 12 , minute = 0)
-
-    elif level == 'B1':
-        scheduler.add_job(b1,args=(message,), trigger='cron', hour = 12 , minute = 0)
-
-    elif level == 'B2':
-        scheduler.add_job(b2,args=(message,), trigger='cron', hour = 12 , minute = 0)
-
-    elif level == 'C1/2':
-        scheduler.add_job(c1,args=(message,), trigger='cron', hour = 12 , minute = 0)
-
+    cursor.execute('INSERT OR REPLACE INTO users (user_id, category) VALUES (?, ?)', (user_id, level))
+    conn.commit()
 
     await bot.send_message(message.from_user.id,
                            f"Ви обрали рівень {level}, тепер вам буде приходить кожен день по 5 слів рівня{level}",
@@ -112,116 +114,67 @@ async def level_handler(message: types.Message):
 @dp.message_handler(commands='Сфера')
 async def act_handler(message: types.Message):
     act = message.text.split(' ')[1]  # Получаем сферу из текста сообщения
-    global counter_act
-
-    # sfera(message, act)
+    user_id = message.from_user.id
+    cursor1.execute('INSERT OR REPLACE INTO users (user_id, category) VALUES (?, ?)', (user_id, act))
+    conn1.commit()
     await bot.send_message(message.from_user.id,
                                f"Ви обрали сферу {act}, тепер вам буде приходить кожен день по 5 слів зі сфери {act}",
                                reply_markup=CHANGE_KEYBOARD)
-    scheduler.add_job(sfera_chng,args=(message, act), trigger='cron', hour=12, minute=0)
 
 
 
 
-def sfera(act):
-    global count_stop
 
-    list = []
-    if act == 'ІТ':
-        obj = parseAct.ParseAct()
-        list = obj.parse_IT()
-    if act == 'медицини':
-        obj = parseAct.ParseAct()
-        list = obj.parse_med()
-    if act == 'економіки':
-        obj = parseAct.ParseAct()
-        list = obj.parse_economic()
-    if act == 'політики':
-        obj = parseAct.ParseAct()
-        list = obj.parse_politice()
-    if act == 'мистецтво':
-        obj = parseAct.ParseAct()
-        list = obj.parse_art()
-    return list
+async def send_words():
+    cursor.execute("SELECT user_id FROM users")
+    for i in cursor.fetchall():
+        ids.append(i[0])
 
+    cursor.execute("SELECT category FROM users")
+    for i in cursor.fetchall():
+        acts.append(i[0])
 
-async def sfera_chng(message : types.Message, act):
-    global counter1
-    list = sfera(act)
-    print('ds')
-    await bot.send_message(message.from_user.id, list[counter1])
-    await bot.send_message(message.from_user.id, list[counter1 + 1])
-    await bot.send_message(message.from_user.id, list[counter1 + 2])
-    await bot.send_message(message.from_user.id, list[counter1 + 3])
-    await bot.send_message(message.from_user.id, list[counter1 + 4])
-    await asyncio.sleep(60)
-    counter1 += 5
+    for i in range(0, len(ids)):
+        print(i)
+        global counter5
+        list = parserLvl.parse_words(acts[i])
+        await bot.send_message(ids[i], random.choice(list))
+        await bot.send_message(ids[i], random.choice(list))
+        await bot.send_message(ids[i], random.choice(list))
+        await bot.send_message(ids[i], random.choice(list))
+        await bot.send_message(ids[i], random.choice(list))
+        await asyncio.sleep(60)
 
 
+async def sfera_chng():
+    cursor1.execute("SELECT user_id FROM users2")
+    for i in cursor1.fetchall():
+        ids.append(i[0])
 
-async def a1(message: types.Message):
-    global count_stop
-    global counter1
-    list = parserLvl.parse_words('A1')
-    await bot.send_message(message.from_user.id, list[counter1])
-    await bot.send_message(message.from_user.id, list[counter1 + 1])
-    await bot.send_message(message.from_user.id, list[counter1 + 2])
-    await bot.send_message(message.from_user.id, list[counter1 + 3])
-    await bot.send_message(message.from_user.id, list[counter1 + 4])
-    await asyncio.sleep(60)
+    cursor1.execute("SELECT category FROM users2")
+    for i in cursor1.fetchall():
+        acts.append(i[0])
 
-    counter1 += 5
+    for i in range(0, len(ids)):
+        print(i)
+        global counter5
+        list = parserLvl.parse_words(acts[i])
+        await bot.send_message(ids[i], random.choice(list))
+        await bot.send_message(ids[i], random.choice(list))
+        await bot.send_message(ids[i], random.choice(list))
+        await bot.send_message(ids[i], random.choice(list))
+        await bot.send_message(ids[i], random.choice(list))
+        await asyncio.sleep(60)
 
 
 
-async def a2(message: types.Message):
-    global count_stop
-    global counter2
-    list = parserLvl.parse_words('A2')
-    await bot.send_message(message.from_user.id, list[counter1])
-    await bot.send_message(message.from_user.id, list[counter1 + 1])
-    await bot.send_message(message.from_user.id, list[counter1 + 2])
-    await bot.send_message(message.from_user.id, list[counter1 + 3])
-    await bot.send_message(message.from_user.id, list[counter1 + 4])
-    await asyncio.sleep(60)
 
 
-async def b1(message: types.Message):
-    global count_stop
-    global counter1
-    list = parserLvl.parse_words('B1')
-    await bot.send_message(message.from_user.id, list[counter1])
-    await bot.send_message(message.from_user.id, list[counter1 + 1])
-    await bot.send_message(message.from_user.id, list[counter1 + 2])
-    await bot.send_message(message.from_user.id, list[counter1 + 3])
-    await bot.send_message(message.from_user.id, list[counter1 + 4])
-    await asyncio.sleep(60)
 
-
-async def b2(message: types.Message):
-
-    global count_stop
-    global counter4
-    list = parserLvl.parse_words('B2')
-    await bot.send_message(message.from_user.id, list[counter1])
-    await bot.send_message(message.from_user.id, list[counter1 + 1])
-    await bot.send_message(message.from_user.id, list[counter1 + 2])
-    await bot.send_message(message.from_user.id, list[counter1 + 3])
-    await bot.send_message(message.from_user.id, list[counter1 + 4])
-    await asyncio.sleep(60)
-
-
-async def c1(message: types.Message):
-    global count_stop
-    global counter5
-    list = parserLvl.parse_words('C1')
-    await bot.send_message(message.from_user.id, list[counter1])
-    await bot.send_message(message.from_user.id, list[counter1 + 1])
-    await bot.send_message(message.from_user.id, list[counter1 + 2])
-    await bot.send_message(message.from_user.id, list[counter1 + 3])
-    await bot.send_message(message.from_user.id, list[counter1 + 4])
-    await asyncio.sleep(60)
-
+scheduler7.add_job(sfera_chng, trigger='cron', hour=12, minute=0)
+scheduler.add_job(send_words, trigger='cron', hour = 18 , minute = 50)
 
 scheduler.start()
+scheduler7.start()
+
 executor.start_polling(dp, skip_updates=True)
