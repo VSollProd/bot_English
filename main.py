@@ -115,7 +115,7 @@ async def level_handler(message: types.Message):
 async def act_handler(message: types.Message):
     act = message.text.split(' ')[1]  # Получаем сферу из текста сообщения
     user_id = message.from_user.id
-    cursor1.execute('INSERT OR REPLACE INTO users (user_id, category) VALUES (?, ?)', (user_id, act))
+    cursor1.execute('INSERT OR REPLACE INTO users2 (user_id, category) VALUES (?, ?)', (user_id, act))
     conn1.commit()
     await bot.send_message(message.from_user.id,
                                f"Ви обрали сферу {act}, тепер вам буде приходить кожен день по 5 слів зі сфери {act}",
@@ -126,6 +126,7 @@ async def act_handler(message: types.Message):
 
 
 async def send_words():
+    
     cursor.execute("SELECT user_id FROM users")
     for i in cursor.fetchall():
         ids.append(i[0])
@@ -133,16 +134,14 @@ async def send_words():
     cursor.execute("SELECT category FROM users")
     for i in cursor.fetchall():
         acts.append(i[0])
-
+    
     for i in range(0, len(ids)):
         print(i)
         global counter5
         list = parserLvl.parse_words(acts[i])
-        await bot.send_message(ids[i], random.choice(list))
-        await bot.send_message(ids[i], random.choice(list))
-        await bot.send_message(ids[i], random.choice(list))
-        await bot.send_message(ids[i], random.choice(list))
-        await bot.send_message(ids[i], random.choice(list))
+        sample = random.sample(list, 5)
+        for i in sample:
+            await bot.send_message(ids[i], i)
         await asyncio.sleep(60)
 
 
@@ -159,11 +158,9 @@ async def sfera_chng():
         print(i)
         global counter5
         list = parserLvl.parse_words(acts[i])
-        await bot.send_message(ids[i], random.choice(list))
-        await bot.send_message(ids[i], random.choice(list))
-        await bot.send_message(ids[i], random.choice(list))
-        await bot.send_message(ids[i], random.choice(list))
-        await bot.send_message(ids[i], random.choice(list))
+        sample1 = random.sample(list, 5)
+        for i in sample1:
+            await bot.send_message(ids[i], i)
         await asyncio.sleep(60)
 
 
