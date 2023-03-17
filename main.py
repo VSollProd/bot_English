@@ -18,7 +18,7 @@ conn = sqlite3.connect('users.db')
 cursor = conn.cursor()
 cursor.execute('''CREATE TABLE IF NOT EXISTS users (user_id INTEGER PRIMARY KEY, category TEXT)''')
 
-conn1 = sqlite3.connect('users.db')
+conn1 = sqlite3.connect('users2.db')
 cursor1 = conn.cursor()
 cursor1.execute('''CREATE TABLE IF NOT EXISTS users2 (user_id INTEGER PRIMARY KEY, category TEXT)''')
 
