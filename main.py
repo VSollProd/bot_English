@@ -169,7 +169,7 @@ async def sfera_chng():
 
 
 scheduler7.add_job(sfera_chng, trigger='cron', hour=12, minute=0)
-scheduler.add_job(send_words, trigger='cron', hour = 18 , minute = 50)
+scheduler.add_job(send_words, trigger='cron', hour = 12 , minute = 0)
 
 scheduler.start()
 scheduler7.start()
