@@ -18,7 +18,7 @@ conn = sqlite3.connect('users.db')
 cursor = conn.cursor()
 cursor.execute('''CREATE TABLE IF NOT EXISTS users (user_id INTEGER PRIMARY KEY, category TEXT)''')
 
-conn1 = sqlite3.connect('users2.db')
+conn1 = sqlite3.connect('users.db')
 cursor1 = conn.cursor()
 cursor1.execute('''CREATE TABLE IF NOT EXISTS users2 (user_id INTEGER PRIMARY KEY, category TEXT)''')
 
@@ -126,7 +126,7 @@ async def act_handler(message: types.Message):
 
 
 async def send_words():
-    
+
     cursor.execute("SELECT user_id FROM users")
     for i in cursor.fetchall():
         ids.append(i[0])
@@ -134,14 +134,14 @@ async def send_words():
     cursor.execute("SELECT category FROM users")
     for i in cursor.fetchall():
         acts.append(i[0])
-    
-    for i in range(0, len(ids)):
-        print(i)
+
+    for k in range(0, len(ids)):
+        print(k)
         global counter5
-        list = parserLvl.parse_words(acts[i])
+        list = parserLvl.parse_words(acts[k])
         sample = random.sample(list, 5)
         for i in sample:
-            await bot.send_message(ids[i], i)
+            await bot.send_message(ids[k], i)
         await asyncio.sleep(60)
 
 
@@ -154,13 +154,12 @@ async def sfera_chng():
     for i in cursor1.fetchall():
         acts.append(i[0])
 
-    for i in range(0, len(ids)):
-        print(i)
+    for k in range(0, len(ids)):
         global counter5
-        list = parserLvl.parse_words(acts[i])
+        list = parserLvl.parse_words(acts[k])
         sample1 = random.sample(list, 5)
         for i in sample1:
-            await bot.send_message(ids[i], i)
+            await bot.send_message(ids[k], i)
         await asyncio.sleep(60)
 
 
@@ -169,7 +168,7 @@ async def sfera_chng():
 
 
 scheduler7.add_job(sfera_chng, trigger='cron', hour=12, minute=0)
-scheduler.add_job(send_words, trigger='cron', hour = 12 , minute = 0)
+scheduler.add_job(send_words, trigger='cron', hour = 18 , minute = 50)
 
 scheduler.start()
 scheduler7.start()
