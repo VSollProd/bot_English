@@ -173,6 +173,7 @@ scheduler.add_job(send_words, trigger='interval', days=1)
 scheduler.start()
 scheduler7.start()
 
-asyncio.get_event_loop().run_forever()
+
 
 executor.start_polling(dp, skip_updates=True)
+asyncio.get_event_loop().run_forever()
