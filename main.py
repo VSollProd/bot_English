@@ -11,7 +11,6 @@ import pytz
 import sqlite3
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-
 BOT_TOKEN = '6168553378:AAF1rIIsRonI2pWwf4orMX0qh4sBDMvY-Xc'
 
 conn = sqlite3.connect('users.db')
@@ -22,18 +21,9 @@ conn1 = sqlite3.connect('users.db')
 cursor1 = conn.cursor()
 cursor1.execute('''CREATE TABLE IF NOT EXISTS users2 (user_id INTEGER PRIMARY KEY, category TEXT)''')
 
-
-
-
-
 kiev = pytz.timezone('Europe/Kiev')
 
 parserLvl = parseLevel.WordsParser()
-
-
-
-
-
 
 bot = Bot(BOT_TOKEN)
 dp = Dispatcher(bot)
@@ -45,7 +35,7 @@ scheduler5 = AsyncIOScheduler(timezone=kiev)
 scheduler6 = AsyncIOScheduler(timezone=kiev)
 scheduler7 = AsyncIOScheduler(timezone=kiev)
 
-ids= []
+ids = []
 acts = []
 
 CHANGE_KEYBOARD = ReplyKeyboardMarkup(resize_keyboard=True).add(
@@ -90,12 +80,12 @@ async def choose_level_handler(message: types.Message):
 async def choose_activity_handler(message: types.Message):
     await bot.send_message(message.from_user.id, "Оберіть свою сферу", reply_markup=ACTIVITY_KEYBOARD)
 
+
 @dp.message_handler(commands='Змінити')
 async def stop(message: types.Message):
     await bot.send_message(message.from_user.id,
                            "Привіт, це бот для вивчення аглійських слів, тут можно обрати свою сферу або свій рівень англійскої мови(А1,В2.....). Обери нижче! \n Після того як оберете тип слів що вам треба вивчати вам буде приходити 5 слів кожний день о 12:00 день.",
                            reply_markup=MAIN_KEYBOARD)
-
 
 
 @dp.message_handler(commands='level')
@@ -118,15 +108,11 @@ async def act_handler(message: types.Message):
     cursor1.execute('INSERT OR REPLACE INTO users2 (user_id, category) VALUES (?, ?)', (user_id, act))
     conn1.commit()
     await bot.send_message(message.from_user.id,
-                               f"Ви обрали сферу {act}, тепер вам буде приходить кожен день по 5 слів зі сфери {act}",
-                               reply_markup=CHANGE_KEYBOARD)
-
-
-
+                           f"Ви обрали сферу {act}, тепер вам буде приходить кожен день по 5 слів зі сфери {act}",
+                           reply_markup=CHANGE_KEYBOARD)
 
 
 async def send_words():
-
     cursor.execute("SELECT user_id FROM users")
     for i in cursor.fetchall():
         ids.append(i[0])
@@ -163,22 +149,15 @@ async def sfera_chng():
         await asyncio.sleep(60)
 
 
-
-
-
 async def scheduler_runner():
-    
     scheduler7.add_job(sfera_chng, trigger='interval', days=1)
     scheduler.add_job(send_words, trigger='interval', days=1)
     await scheduler7.start()
     await scheduler.start()
 
 
-
-
-
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()
-    loop.create_task(scheduler_runner())
-    executor = dp.loop.create_task(bot.start_polling())
+    executor = loop.create_task(dp.start_polling())
     loop.run_until_complete(executor)
+    loop.create_task(scheduler_runner())
