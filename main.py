@@ -166,15 +166,19 @@ async def sfera_chng():
 
 
 
+async def scheduler_runner():
+    
+    scheduler7.add_job(sfera_chng, trigger='interval', days=1)
+    scheduler.add_job(send_words, trigger='interval', days=1)
+    await scheduler7.start()
+    await scheduler.start()
 
-scheduler7.add_job(sfera_chng, trigger='interval', days=1)
-scheduler.add_job(send_words, trigger='interval', days=1)
 
 
 
 
-
-executor.start_polling(dp, skip_updates=True)
-while True:
-    scheduler.start()
-    scheduler7.start()
+if __name__ == '__main__':
+    loop = asyncio.get_event_loop()
+    loop.create_task(scheduler_runner())
+    executor = dp.loop.create_task(bot.start_polling())
+    loop.run_until_complete(executor)
