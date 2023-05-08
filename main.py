@@ -28,7 +28,6 @@ parserLvl = parseLevel.WordsParser()
 bot = Bot(BOT_TOKEN)
 dp = Dispatcher(bot)
 
-
 ids = []
 acts = []
 
@@ -54,7 +53,7 @@ ACTIVITY_KEYBOARD = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=
 
 MAIN_KEYBOARD = ReplyKeyboardMarkup(resize_keyboard=True).add(
     KeyboardButton('/0брати за рівнем'),
-    KeyboardButton('/Обрати за сферою діяльності')
+    # KeyboardButton('/Обрати за сферою діяльності')
 )
 
 
@@ -85,24 +84,25 @@ async def stop(message: types.Message):
 @dp.message_handler(commands='level')
 async def level_handler(message: types.Message):
     level = message.text.split(' ')[1]  # Получаем уровень из текста сообщения
+    prs = parseLevel.WordsParser()
+    list = prs.parse_words(level)
+    smpl = random.sample(list, 5)
+    for i in smpl:
+        await bot.send_message(message.from_user.id, i)
+    # await bot.send_message(message.from_user.id,
+    #                         ''
+    #                        ,
+    #                        reply_markup=CHANGE_KEYBOARD)
 
 
-
-    list = parseLevel.parse_words(level)
-    await bot.send_message(message.from_user.id,
-                           level
-                           ,
-                           reply_markup=CHANGE_KEYBOARD)
-
-
-@dp.message_handler(commands='Сфера')
-async def act_handler(message: types.Message):
-    act = message.text.split(' ')[1]  # Получаем сферу из текста сообщения
-
-    list = parseAct.parse_words(act)
-    await bot.send_message(message.from_user.id,
-                           list,
-                           reply_markup=CHANGE_KEYBOARD)
+# @dp.message_handler(commands='Сфера')
+# async def act_handler(message: types.Message):
+#     act = message.text.split(' ')[1]  # Получаем сферу из текста сообщения
+#
+#     list = parseAct.parse_words(act)
+#     await bot.send_message(message.from_user.id,
+#                            list,
+#                            reply_markup=CHANGE_KEYBOARD)
 
 
 # async def send_words():
@@ -117,11 +117,10 @@ async def act_handler(message: types.Message):
 #     for k in range(0, len(ids)):
 #         print(k)
 #         global counter5
-        
+
 #         sample = random.sample(list, 5)
 #         for i in sample:
 #             await bot.send_message(ids[k], i)
-        
 
 
 # async def sfera_chng():
@@ -139,9 +138,6 @@ async def act_handler(message: types.Message):
 #         sample1 = random.sample(list, 5)
 #         for i in sample1:
 #             await bot.send_message(ids[k], i)
-        
 
 
-
-
-executor.start_polling()
+executor.start_polling(dp)
